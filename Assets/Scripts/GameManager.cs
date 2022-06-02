@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        // テストコメント
     }
 
     void Update()

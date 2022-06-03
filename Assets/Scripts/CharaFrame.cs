@@ -32,47 +32,40 @@ public class CharaFrame : MonoBehaviour
     // —§‚¿ŠG•\¦
     public void DispSprite(string name)
     {
-
-        //img.sprite = Resources.Load<Sprite>(name);
-        //img.color = new Color32(255, 255, 255, 255);
+        _img.sprite = Resources.Load<Sprite>(name);
+        _img.color = new Color32(255, 255, 255, 255);
     }
 
     // —§‚¿ŠGíœ
     public void DeleteSprite(string _)
     {
-
-        //img.sprite = null;
-        //img.color = new Color32(255, 255, 255, 0);
+        _img.sprite = null;
+        _img.color = new Color32(255, 255, 255, 0);
     }
 
     // —§‚¿ŠG‰º‚°‚é
     public void LowerSprite(string _)
     {
 
-        //img.color = new Color32(100, 100, 100, 255);
+        _img.color = new Color32(100, 100, 100, 255);
+    }
+
+    // —§‚¿ŠG’µ‚Ë‚é
+    public void JumpSprite(string _)
+    {
+        transform.DOPunchPosition(Vector3.up * 30.0f, 0.5f);
     }
 
     // —§‚¿ŠG—h‚ç‚·
     public void ShakeSprite(string _)
     {
-
-    }
-
-    // ‰æ–Ê—h‚ç‚·
-    public void ShakeScreen(string _)
-    {
-
+        transform.DOShakePosition(0.5f, 30.0f);
     }
 
     // ƒGƒtƒFƒNƒg¶¬
     public void GenerateEffect(string name)
     {
-
-    }
-
-    // ”wŒi•ÏX
-    public void ChangeBackground(string name)
-    {
-
+        GameObject eff = Resources.Load<GameObject>(name);
+        Instantiate(eff, transform.position, Quaternion.identity);
     }
 }

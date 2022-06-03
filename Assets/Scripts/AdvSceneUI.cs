@@ -64,6 +64,7 @@ public class AdvSceneUI : MonoBehaviour
         go.GetComponent<BackLogChild>().SetText(name, line);
         go.transform.SetParent(_backLogParent);
         go.transform.localScale = Vector3.one;
+        go.transform.localPosition = Vector3.zero;
     }
 
     // バックログの表示を切り替え

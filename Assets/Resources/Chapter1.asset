@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chapter1
   m_EditorClassIdentifier: 
   num: 1
-  title: "\u3061\u3083\u3077\u305F\u30FC\u3044\u3061\u3070\u3093"
+  title: "\u30BF\u30D4\u30B3\u767B\u5834\uFF01"
   textAsset: {fileID: 4900000, guid: ba4be9c884593bd4a84d2521acf5b414, type: 3}

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c01cd0646716ce45a774ef412124f95, type: 3}
   m_Name: Chapter0
   m_EditorClassIdentifier: 
-  title: "\u3061\u3083\u3077\u305F\u30FC\u305C\u308D"
+  num: 0
+  title: "\u30AA\u30FC\u30D7\u30CB\u30F3\u30B0"
   textAsset: {fileID: 4900000, guid: c4283e283fdc89a409913a9b2a3e4d31, type: 3}

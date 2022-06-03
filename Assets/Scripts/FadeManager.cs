@@ -40,10 +40,9 @@ public class FadeManager : MonoBehaviour
             byte a = 255;
 
             _isFading = true;
-            while (true)
+            while (a > 0)
             {
                 _image.color = new Color32(0, 0, 0, a);
-                if (a <= 0) break;
                 a -= _fadeSpeed;
                 yield return null;
             }
@@ -64,10 +63,9 @@ public class FadeManager : MonoBehaviour
 
             _image.enabled = true;
             _isFading = true;
-            while (true)
+            while (a < 255)
             {
                 _image.color = new Color32(0, 0, 0, a);
-                if (a >= 255) break;
                 a += _fadeSpeed;
                 yield return null;
             }

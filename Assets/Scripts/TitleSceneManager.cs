@@ -10,9 +10,9 @@ public class TitleSceneManager : MonoBehaviour
     // ///////////////////////////
 
     [SerializeField] FadeManager fadeManager;
-    // シーン選択か設定をクリックしたときにポップするパネルのアニメーション
+    // ボタンをクリックしたときにポップするパネルのアニメーション
     [SerializeField] Animator _popPanelAnim;
-    // シーン選択か設定をクリックしたときにポップするパネルの背景
+    // ボタンをクリックしたときにポップするパネルの背景
     [SerializeField] GameObject _popPanelBack;
     // 確認画面のアニメーション
     [SerializeField] Animator _confirmPopAnim;
@@ -72,6 +72,7 @@ public class TitleSceneManager : MonoBehaviour
 
         IEnumerator enumerator()
         {
+            _popPanelBack.SetActive(true);
             GameManager.instance._Flag.read = 0;
             GameManager.instance._IsStoryMode = true;
             SoundManager.instance.Play("SE_決定");
@@ -87,6 +88,7 @@ public class TitleSceneManager : MonoBehaviour
 
         IEnumerator enumerator()
         {
+            _popPanelBack.SetActive(true);
             GameManager.instance._IsStoryMode = true;
             SoundManager.instance.Play("SE_決定");
             yield return new WaitForSeconds(0.5f);
@@ -118,6 +120,7 @@ public class TitleSceneManager : MonoBehaviour
     // "ゲーム終了"をクリックした際の処理
     public void ClickedExitButton()
     {
+        _popPanelBack.SetActive(true);
         // TODO: クリックした後に他の場所をクリックさせないために透明の背景を出す
         // TODO: SEの再生
         // TODO: SEが終わったらゲーム終了

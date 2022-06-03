@@ -107,6 +107,9 @@ public class AdvSceneManager : MonoBehaviour
         string name = $"Chapter{GameManager.instance._Flag.read}";
         _chapterData = LoadChapterData(name);
         SplitText(_chapterData.TextAsset);
+
+        // タイトルをセット
+        advSceneUI._TitlePopText = _chapterData.Title;
     }
 
     // 現在のシーンで読み込むチャプターデータをロード

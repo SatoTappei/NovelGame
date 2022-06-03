@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AdvSceneUI : MonoBehaviour
 {
@@ -25,9 +26,14 @@ public class AdvSceneUI : MonoBehaviour
     [SerializeField] Animator _sceneSkipAnim;
     // シーンスキップの確認画面の背景
     [SerializeField] GameObject _ss_ConfirmPopBack;
+    // タイトルのポップのテキスト
+    [SerializeField] TextMeshProUGUI _titlePopText;
 
     // 台詞枠の表示非表示を切り替える
     public bool _LineItemActive { set => _lineItem.SetActive(value); }
+
+    // タイトルのポップにタイトルをセット
+    public string _TitlePopText { set => _titlePopText.text = value; }
 
     void Start()
     {

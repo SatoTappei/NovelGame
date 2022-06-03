@@ -97,7 +97,13 @@ public class AdvSceneManager : MonoBehaviour
                 _charaCount = _currentLine.Length;
             }
         }
+        // 台詞を描画
         TypingLine();
+
+        // 現在の台詞が全て表示し終わっていたらピリオドアイコンを表示する
+        if (_lineText.text.Length == _currentLine.Length &&
+            !advSceneUI._PeriodIcon)
+            advSceneUI._PeriodIcon = true;
     }
 
     // 初期化
@@ -136,6 +142,9 @@ public class AdvSceneManager : MonoBehaviour
     // 次の台詞に進む
     void Advance()
     {
+        // ピリオドアイコンを消す
+        advSceneUI._PeriodIcon = false;
+
         // イベントの実行と、今から表示する台詞のセット
         advEventManager.RunEvent(_events[_lineNum]);
         SetNextLine();
@@ -196,7 +205,7 @@ public class AdvSceneManager : MonoBehaviour
         if (!_isHide && isHide == false) return;
 
         SoundManager.instance.Play("SE_決定2");
-        advSceneUI._LineItemActive = !isHide;
+        advSceneUI._LineItem = !isHide;
         _isHide = isHide;
         // 台詞枠を操作するとオートモード解除
         _isAuto = false;

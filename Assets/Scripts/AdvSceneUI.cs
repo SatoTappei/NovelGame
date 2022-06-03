@@ -28,10 +28,13 @@ public class AdvSceneUI : MonoBehaviour
     [SerializeField] GameObject _ss_ConfirmPopBack;
     // タイトルのポップのテキスト
     [SerializeField] TextMeshProUGUI _titlePopText;
+    // 台詞の表示が終わったことを示すアイコン(ピリオドアイコン)
+    [SerializeField] GameObject _periodIcon;
 
     // 台詞枠の表示非表示を切り替える
-    public bool _LineItemActive { set => _lineItem.SetActive(value); }
-
+    public bool _LineItem { set => _lineItem.SetActive(value); }
+    // ピリオドアイコンの表示を切り替える
+    public bool _PeriodIcon { get => _periodIcon.activeSelf; set => _periodIcon.SetActive(value); }
     // タイトルのポップにタイトルをセット
     public string _TitlePopText { set => _titlePopText.text = value; }
 

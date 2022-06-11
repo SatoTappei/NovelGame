@@ -10,16 +10,20 @@ public class TitleItemButton : MonoBehaviour
     /* タイトルの各コンテンツボタンの挙動 */
     // /////////////////////////
 
+    [SerializeField] Color32 _idleColor;
+    [SerializeField] Color32 _PopColor;
     EventTrigger _et;
+    TextMeshProUGUI _tmp;
 
     void Awake()
     {
         _et = GetComponent<EventTrigger>();
+        _tmp = GetComponent<TextMeshProUGUI>();
     }
 
     void Start()
     {
-
+        //_tmp.color = _idleColor; // TitleSceneManagerの後に呼ばれると色がクリック可能時の色に戻ってしまう不具合
     }
 
     void Update()
@@ -32,11 +36,13 @@ public class TitleItemButton : MonoBehaviour
     {
         if (trigger == "Enter")
         {
+            _tmp.color = _PopColor;
             gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1);
             SoundManager.instance.Play("SE_カーソルオン");
         }
         else if (trigger == "Exit")
         {
+            _tmp.color = _idleColor;
             gameObject.transform.localScale = Vector3.one;
         }
         else if (trigger == "Down")

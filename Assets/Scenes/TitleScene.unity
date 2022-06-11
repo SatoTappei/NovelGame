@@ -249,6 +249,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907519fdd2758c54e8927fadd016f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idleColor:
+    serializedVersion: 2
+    rgba: 4282861383
+  _PopColor:
+    serializedVersion: 2
+    rgba: 4288958207
 --- !u!114 &161733018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +390,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1405,7 +1411,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1553,6 +1559,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907519fdd2758c54e8927fadd016f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idleColor:
+    serializedVersion: 2
+    rgba: 4282861383
+  _PopColor:
+    serializedVersion: 2
+    rgba: 4288958207
 --- !u!1 &853158428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,7 +1598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -231.2}
+  m_AnchoredPosition: {x: 0, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &872857077
@@ -1903,6 +1915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8279110480547715387, guid: 316324ec684a6c84888e4a0589609ff5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 316324ec684a6c84888e4a0589609ff5, type: 3}
 --- !u!1 &1272210436
@@ -1956,6 +1972,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907519fdd2758c54e8927fadd016f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idleColor:
+    serializedVersion: 2
+    rgba: 4282861383
+  _PopColor:
+    serializedVersion: 2
+    rgba: 4288958207
 --- !u!114 &1272210439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,7 +2125,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2296,7 +2318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1426828834 stripped
@@ -2470,7 +2492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -180.2}
+  m_AnchoredPosition: {x: 0, y: -170}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1492493566 stripped
@@ -2511,7 +2533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1683410846
@@ -3257,7 +3279,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3312,6 +3334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907519fdd2758c54e8927fadd016f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idleColor:
+    serializedVersion: 2
+    rgba: 4282861383
+  _PopColor:
+    serializedVersion: 2
+    rgba: 4288958207
 --- !u!114 &1990934592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3765,7 +3793,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3913,6 +3941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907519fdd2758c54e8927fadd016f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idleColor:
+    serializedVersion: 2
+    rgba: 4282861383
+  _PopColor:
+    serializedVersion: 2
+    rgba: 4288958207
 --- !u!1001 &5684798096657541167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4064,6 +4098,10 @@ PrefabInstance:
     - target: {fileID: 6475836115015225826, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475836115015225826, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: _distance

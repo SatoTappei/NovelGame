@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class BackLogChild : MonoBehaviour
 {
@@ -9,8 +9,8 @@ public class BackLogChild : MonoBehaviour
     /* アドベンチャーパートのバックログ内に生成される台詞枠 */
     // ///////////////////////////////////////////////////////
 
-    [SerializeField] TextMeshProUGUI _nameText;
-    [SerializeField] TextMeshProUGUI _lineText;
+    [SerializeField] Text _nameText;
+    [SerializeField] Text _lineText;
 
     void Start()
     {

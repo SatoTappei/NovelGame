@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class AdvSceneManager : MonoBehaviour
@@ -15,9 +15,9 @@ public class AdvSceneManager : MonoBehaviour
     [SerializeField] AdvSceneUI advSceneUI;
     [SerializeField] FadeManager fadeManager;
     // 名前枠
-    [SerializeField] TextMeshProUGUI _nameText;
+    [SerializeField] Text _nameText;
     // 台詞枠
-    [SerializeField] TextMeshProUGUI _lineText;
+    [SerializeField] Text _lineText;
     // テスト:発生させたエフェクトの親、イベントマネージャーの方に持たせることを検討 <- 次の台詞に移った際に強制的に消すため
     [SerializeField] Transform _effParent;
     // 1文字を表示する感覚

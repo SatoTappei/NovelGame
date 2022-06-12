@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class AdvSceneUI : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class AdvSceneUI : MonoBehaviour
     // シーンスキップの確認画面の背景
     [SerializeField] GameObject _ss_ConfirmPopBack;
     // タイトルのポップのテキスト
-    [SerializeField] TextMeshProUGUI _titlePopText;
+    [SerializeField] Text _titlePopText;
     // 台詞の表示が終わったことを示すアイコン(ピリオドアイコン)
     [SerializeField] GameObject _periodIcon;
 

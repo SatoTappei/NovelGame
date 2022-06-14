@@ -18,8 +18,6 @@ public class AdvSceneManager : MonoBehaviour
     [SerializeField] Text _nameText;
     // 台詞枠
     [SerializeField] Text _lineText;
-    // テスト:発生させたエフェクトの親、イベントマネージャーの方に持たせることを検討 <- 次の台詞に移った際に強制的に消すため
-    [SerializeField] Transform _effParent;
     // 1文字を表示する感覚
     [SerializeField] float _distance;
     // 再生するチャプターのデータ

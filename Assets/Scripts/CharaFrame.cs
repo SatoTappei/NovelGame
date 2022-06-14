@@ -10,6 +10,9 @@ public class CharaFrame : MonoBehaviour
     /* イベント用の枠、イベントの処理を持つ */
     // ///////////////////////////////////////
 
+    // 発生させたエフェクトの親
+    [SerializeField] Transform _effParent;
+
     Image _img;
     Vector3 _defaultPos;
 
@@ -65,8 +68,14 @@ public class CharaFrame : MonoBehaviour
     // エフェクト生成
     public void GenerateEffect(string name)
     {
+        // エフェクトが画面に表示されているなら重ならないように全て非表示にする
+        if(_effParent.childCount > 0)
+            foreach (Transform child in _effParent)
+                child.gameObject.SetActive(false);
+
         GameObject eff = Resources.Load<GameObject>(name);
         Vector3 pos = transform.position;
-        Instantiate(eff, new Vector3(pos.x + 2.5f, pos.y + 7.8f, 10), Quaternion.identity);
+        var go = Instantiate(eff, new Vector3(pos.x + 2.5f, pos.y + 7.8f, 10), Quaternion.identity);
+        go.transform.SetParent(_effParent);
     }
 }

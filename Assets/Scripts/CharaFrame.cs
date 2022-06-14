@@ -66,6 +66,7 @@ public class CharaFrame : MonoBehaviour
     public void GenerateEffect(string name)
     {
         GameObject eff = Resources.Load<GameObject>(name);
-        Instantiate(eff, transform.position, Quaternion.identity);
+        Vector3 pos = transform.position;
+        Instantiate(eff, new Vector3(pos.x + 2.5f, pos.y + 7.8f, 10), Quaternion.identity);
     }
 }

@@ -34,7 +34,7 @@ public class TitleSceneManager : MonoBehaviour
     void Awake()
     {
         // セーブデータを読み込む
-        GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
+        //GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
         //Debug.Log($"セーブデータをロード クリア{GameManager.instance._Flag.clear} リード{GameManager.instance._Flag.read}");
     }
 

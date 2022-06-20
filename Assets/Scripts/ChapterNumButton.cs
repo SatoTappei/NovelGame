@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ChapterNumButton : MonoBehaviour
 {
@@ -12,12 +12,12 @@ public class ChapterNumButton : MonoBehaviour
     // 登録するチャプターデータ
     [SerializeField] ChapterDataSO _so;
     // 表示するテキスト
-    TextMeshProUGUI _tmp;
+    Text _tmp;
 
     void Start()
     {
-        _tmp = transform.GetComponentInChildren<TextMeshProUGUI>();
-        _tmp.text = $"第{_so.Num}話 {_so.Title}";
+        _tmp = transform.GetComponentInChildren<Text>();
+        _tmp.text = $"第{_so.Num + 1}話 {_so.Title}";
         //gameObject.SetActive(false);
     }
 

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class TitleSceneManager : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class TitleSceneManager : MonoBehaviour
     // 確認画面の背景
     [SerializeField] GameObject _confirmPopBack;
     // 確認画面で表示されるテキスト
-    [SerializeField] TextMeshProUGUI _confirmPopText;
+    [SerializeField] Text _confirmPopText;
     // "つづきから"のボタンのコンポーネント
     [SerializeField] TitleItemButton _continueButton;
     // シーン選択のボタンのコンポーネント
@@ -34,7 +34,7 @@ public class TitleSceneManager : MonoBehaviour
     void Awake()
     {
         // セーブデータを読み込む
-        //GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
+        GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
         //Debug.Log($"セーブデータをロード クリア{GameManager.instance._Flag.clear} リード{GameManager.instance._Flag.read}");
     }
 
@@ -63,6 +63,8 @@ public class TitleSceneManager : MonoBehaviour
         _settingItem.SetActive(false);
         _popPanelBack.SetActive(false);
         _confirmPopBack.SetActive(false);
+
+        SoundManager.instance.Play("BGM_タイトル");
     }
 
     // "はじめから"をクリックした際の処理

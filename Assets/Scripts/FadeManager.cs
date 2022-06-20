@@ -70,6 +70,7 @@ public class FadeManager : MonoBehaviour
                 yield return null;
             }
             _isFading = false;
+            SoundManager.instance.StopBGM();
             SceneManager.LoadScene(name);
         }
     }

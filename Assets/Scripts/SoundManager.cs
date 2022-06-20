@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
         public string key;
         public AudioClip audioClip;
         public float playedTime;
+        public float volume;
     }
 
     // 再生するサウンドデータたち
@@ -69,9 +70,9 @@ public class SoundManager : MonoBehaviour
             data.playedTime = Time.realtimeSinceStartup;
 
             if (key.IndexOf("BGM_") >= 0)
-                PlayBGM(data.audioClip);
-            else 
-                Play(data.audioClip);
+                PlayBGM(data.audioClip, data.volume);
+            else
+                Play(data.audioClip, data.volume);
         }
         else
         {
@@ -80,7 +81,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // 渡されたクリップを再生
-    void Play(AudioClip clip)
+    void Play(AudioClip clip, float volume)
     {
         AudioSource source = GetAudioSource();
         if(source == null)
@@ -89,16 +90,27 @@ public class SoundManager : MonoBehaviour
             return;
         }
         source.clip = clip;
+        source.volume = volume;
         source.Play();
     }
 
     // 渡されたBGMのクリップを再生
-    void PlayBGM(AudioClip clip)
+    void PlayBGM(AudioClip clip, float volume)
     {
         AudioSource source = _audioSources[_audioSources.Length - 1];
         source.clip = clip;
-        source.volume = 0.3f;
+        source.volume = volume;
         source.loop = true;
+
+        // 一度enabledを切り替えないとBGMが鳴らない不具合の応急処置
+        StartCoroutine(Enumerator());
+
+        IEnumerator Enumerator()
+        {
+            source.enabled = false;
+            yield return null;
+            source.enabled = true;
+        }
     }
 
     // 再生中のBGMを止める

@@ -4591,6 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b004b95154df5743bb69730fc1ac056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _effParent: {fileID: 1172004380}
   _eventsDatas:
   - key: "\u7ACB\u3061\u7D75\u8868\u793A(\u5DE6)"
     method:

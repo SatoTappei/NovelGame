@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1096553785936627902}
   - component: {fileID: -6257795522930831206}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Eff_Waiwai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 7382971548663020723}
   - component: {fileID: 6428346976332772960}
   - component: {fileID: 7770457942902662649}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,7 +5059,7 @@ GameObject:
   - component: {fileID: 1778732740258476373}
   - component: {fileID: 2696715793088932931}
   - component: {fileID: 4119998161335475734}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10060,7 +10060,7 @@ GameObject:
   - component: {fileID: 8758633089232903560}
   - component: {fileID: 405029515367146748}
   - component: {fileID: 6755629298050420448}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}

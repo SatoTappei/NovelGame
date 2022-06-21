@@ -21,6 +21,8 @@ public class AdvEventManager : MonoBehaviour
     [Serializable]
     public class StrEvent : UnityEvent<string> { }
 
+    // エフェクトの親
+    [SerializeField] Transform _effParent;
     // イベント名で呼び出せる演出
     [SerializeField] EventData[] _eventsDatas;
     Dictionary<string, StrEvent> _eventDic = new Dictionary<string, StrEvent>();
@@ -45,6 +47,11 @@ public class AdvEventManager : MonoBehaviour
     //イベントの実行
     public void RunEvent(string eventStr)
     {
+        // エフェクトが画面に表示されているなら重ならないように全て非表示にする
+        if (_effParent.childCount > 0)
+            foreach (Transform child in _effParent)
+                child.gameObject.SetActive(false);
+
         // 文字列を分解してイベント名に分ける
         string[] eventNames = eventStr.Split(';');
 

@@ -49,7 +49,6 @@ public class CharaFrame : MonoBehaviour
     // 立ち絵下げる
     public void LowerSprite(string _)
     {
-
         _img.color = new Color32(100, 100, 100, 255);
     }
 
@@ -68,11 +67,6 @@ public class CharaFrame : MonoBehaviour
     // エフェクト生成
     public void GenerateEffect(string name)
     {
-        // エフェクトが画面に表示されているなら重ならないように全て非表示にする
-        if(_effParent.childCount > 0)
-            foreach (Transform child in _effParent)
-                child.gameObject.SetActive(false);
-
         GameObject eff = Resources.Load<GameObject>(name);
         Vector3 pos = transform.position;
         var go = Instantiate(eff, new Vector3(pos.x + 2.5f, pos.y + 7.8f, 10), Quaternion.identity);

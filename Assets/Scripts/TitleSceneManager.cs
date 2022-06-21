@@ -26,8 +26,10 @@ public class TitleSceneManager : MonoBehaviour
     [SerializeField] TitleItemButton _sceneSelectButton;
     // シーン選択の各シーンを選択するボタンの親
     [SerializeField] GameObject _sceneSelectItem;
-    // 設定の各オブジェクトの親
-    [SerializeField] GameObject _settingItem;
+    // "おまけ"ボタンのコンポーネント
+    [SerializeField] TitleItemButton _omakeButton;
+    // おまけの各オブジェクトの親
+    [SerializeField] GameObject _omakeItem;
     // チャプターボタンクリックでここに保存、再生しますか？ -> YESでGameManagerに渡す
     int _chapterNumBuffer;
 
@@ -59,8 +61,14 @@ public class TitleSceneManager : MonoBehaviour
             _sceneSelectButton.SetInteractable(false);
         }
 
+        // TODO:おまけシーンを完成させる
+        if (true)
+        {
+            _omakeButton.SetInteractable(false);
+        }
+
         _sceneSelectItem.SetActive(false);
-        _settingItem.SetActive(false);
+        _omakeItem.SetActive(false);
         _popPanelBack.SetActive(false);
         _confirmPopBack.SetActive(false);
 
@@ -102,7 +110,7 @@ public class TitleSceneManager : MonoBehaviour
     public void ClickedSceneSelectButton()
     {
         ActiveItemPanel(true);
-        ActiveItems(dispItem: _sceneSelectItem, hideItems: _settingItem);
+        ActiveItems(dispItem: _sceneSelectItem, hideItems: _omakeItem);
 
         // 進行状況に応じてボタンを表示
         for (int i = 0; i < _sceneSelectItem.transform.childCount; i++)
@@ -112,11 +120,11 @@ public class TitleSceneManager : MonoBehaviour
         }
     }
 
-    // "設定"をクリックした際の処理
-    public void ClickedSettingButton()
+    // "おまけ"をクリックした際の処理
+    public void ClickedOmakeButton()
     {
         ActiveItemPanel(true);
-        ActiveItems(dispItem: _settingItem, hideItems: _sceneSelectItem);
+        ActiveItems(dispItem: _omakeItem, hideItems: _sceneSelectItem);
     }
 
     // "ゲーム終了"をクリックした際の処理

@@ -70,9 +70,9 @@ public class TitleSceneManager : MonoBehaviour
     // "はじめから"をクリックした際の処理
     public void ClickedBeginingButton()
     {
-        StartCoroutine(enumerator());
+        StartCoroutine(Enumerator());
 
-        IEnumerator enumerator()
+        IEnumerator Enumerator()
         {
             _popPanelBack.SetActive(true);
             GameManager.instance._Flag.read = 0;
@@ -86,9 +86,9 @@ public class TitleSceneManager : MonoBehaviour
     // "つづきから"をクリックした際の処理
     public void ClickedContinueButton()
     {
-        StartCoroutine(enumerator());
+        StartCoroutine(Enumerator());
 
-        IEnumerator enumerator()
+        IEnumerator Enumerator()
         {
             _popPanelBack.SetActive(true);
             GameManager.instance._IsStoryMode = true;
@@ -122,10 +122,15 @@ public class TitleSceneManager : MonoBehaviour
     // "ゲーム終了"をクリックした際の処理
     public void ClickedExitButton()
     {
-        _popPanelBack.SetActive(true);
-        // TODO: クリックした後に他の場所をクリックさせないために透明の背景を出す
-        // TODO: SEの再生
-        // TODO: SEが終わったらゲーム終了
+        StartCoroutine(Enumerator());
+
+        IEnumerator Enumerator()
+        {
+            _popPanelBack.SetActive(true);
+            SoundManager.instance.Play("SE_キャンセル");
+            yield return new WaitForSeconds(0.5f);
+            Application.Quit();
+        }
     }
 
     // シーン選択画面でチャプター番号をクリックした際の処理
@@ -163,9 +168,9 @@ public class TitleSceneManager : MonoBehaviour
     // チャプターセレクトから指定したチャプターを再生
     public void PlaySelectedChapter()
     {
-        StartCoroutine(enumerator());
+        StartCoroutine(Enumerator());
 
-        IEnumerator enumerator()
+        IEnumerator Enumerator()
         {
             GameManager.instance._Flag.read = _chapterNumBuffer;
             GameManager.instance._IsStoryMode = false;

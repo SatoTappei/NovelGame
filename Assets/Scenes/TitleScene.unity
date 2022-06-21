@@ -6258,7 +6258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: _soundDatas.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: _soundDatas.Array.data[0].key
@@ -6301,6 +6301,10 @@ PrefabInstance:
       value: "BGM_\u591C"
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
+      propertyPath: _soundDatas.Array.data[10].key
+      value: "BGM_\u5922"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: _soundDatas.Array.data[0].volume
       value: 1
       objectReference: {fileID: 0}
@@ -6338,6 +6342,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
       propertyPath: _soundDatas.Array.data[9].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
+      propertyPath: _soundDatas.Array.data[10].volume
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
@@ -6380,6 +6388,10 @@ PrefabInstance:
       propertyPath: _soundDatas.Array.data[9].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d579e20167b9ecc4681e1a3557ceb661, type: 3}
+    - target: {fileID: 6475836115015225827, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
+      propertyPath: _soundDatas.Array.data[10].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 54f04fd17a5495d4e90deeffbd194433, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d4122bf62decd94782ce4ef784527eb, type: 3}
 --- !u!1001 &7404714956873831555

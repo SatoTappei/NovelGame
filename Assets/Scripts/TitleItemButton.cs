@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 
 public class TitleItemButton : MonoBehaviour
 {
-    // /////////////////////////
+    // /////////////////////////////////////
     /* タイトルの各コンテンツボタンの挙動 */
-    // /////////////////////////
+    // /////////////////////////////////////
 
     [SerializeField] Color32 _idleColor;
-    [SerializeField] Color32 _PopColor;
+    [SerializeField] Color32 _popColor;
     EventTrigger _et;
     TextMeshProUGUI _tmp;
 
@@ -36,7 +36,7 @@ public class TitleItemButton : MonoBehaviour
     {
         if (trigger == "Enter")
         {
-            _tmp.color = _PopColor;
+            _tmp.color = _popColor;
             gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1);
             SoundManager.instance.Play("SE_カーソルオン");
         }

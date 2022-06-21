@@ -64,7 +64,7 @@ public class TitleSceneManager : MonoBehaviour
         // TODO:‚¨‚Ü‚¯ƒV[ƒ“‚ğŠ®¬‚³‚¹‚é
         if (true)
         {
-            _omakeButton.SetInteractable(false);
+            //_omakeButton.SetInteractable(false);
         }
 
         _sceneSelectItem.SetActive(false);

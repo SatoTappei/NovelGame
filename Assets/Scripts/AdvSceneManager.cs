@@ -252,7 +252,7 @@ public class AdvSceneManager : MonoBehaviour
     // セーブボタン
     public void ClickedSaveButton()
     {
-        SoundManager.instance.Play("SE_決定2");
+        SoundManager.instance.Play("SE_セーブ");
         GameManager.instance.Save();
     }
 

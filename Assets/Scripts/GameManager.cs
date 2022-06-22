@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // テストコメント
+
     }
 
     void Update()
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     // データをセーブ
     public void Save()
     {
-        using (StreamWriter sw = new StreamWriter(Application.dataPath + "/saveData.json", append: false))
+        using (StreamWriter sw = new StreamWriter(/*Application.dataPath*/Application.persistentDataPath + "/saveData.json", append: false))
         {
             string data = JsonUtility.ToJson(_Flag);
             sw.Write(data);
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
             _Flag.clear = 0;
             _Flag.read = 0;
 
-            using (StreamReader sr = new StreamReader(Application.dataPath + "/saveData.json"))
+            using (StreamReader sr = new StreamReader(/*Application.dataPath*/Application.persistentDataPath + "/saveData.json"))
             {
                 string data = sr.ReadLine();
                 sr.Close();

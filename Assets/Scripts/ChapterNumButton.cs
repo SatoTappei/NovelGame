@@ -18,7 +18,6 @@ public class ChapterNumButton : MonoBehaviour
     {
         _tmp = transform.GetComponentInChildren<Text>();
         _tmp.text = $"‘æ{_so.Num + 1}˜b {_so.Title}";
-        //gameObject.SetActive(false);
     }
 
     void Update()

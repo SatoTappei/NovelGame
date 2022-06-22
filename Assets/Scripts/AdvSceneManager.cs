@@ -14,6 +14,8 @@ public class AdvSceneManager : MonoBehaviour
     [SerializeField] AdvEventManager advEventManager;
     [SerializeField] AdvSceneUI advSceneUI;
     [SerializeField] FadeManager fadeManager;
+    // エフェクトの親
+    [SerializeField] GameObject _effParent;
     // 名前枠
     [SerializeField] Text _nameText;
     // 台詞枠
@@ -226,6 +228,8 @@ public class AdvSceneManager : MonoBehaviour
         func.Invoke(isPop);
         // オートモードを解除
         _isAuto = false;
+        // パネルの上にエフェクトが出るの非表示にする
+        _effParent.SetActive(!isPop);
     }
 
     // オートモード切り替え
@@ -265,20 +269,26 @@ public class AdvSceneManager : MonoBehaviour
         // 2回以上参照するので変数に入れておく
         int clear = GameManager.instance._Flag.clear;
         int max = GameManager.instance._MaxChapterNum;
+        int read = GameManager.instance._Flag.read;
+        bool isStory = GameManager.instance._IsStoryMode;
 
         // "はじめから"もしくは"つづきから"かつ、次のチャプターがあれば
-        if (GameManager.instance._IsStoryMode &&
-            GameManager.instance._Flag.read < max)
+        if (isStory && read < max)
         {
-            clear++;
-            GameManager.instance._Flag.clear = Mathf.Clamp(clear, 0, max);
+            // 読んでいるチャプターが最高到達点なら
+            if (read == clear)
+            {
+                clear++;
+                GameManager.instance._Flag.clear = Mathf.Clamp(clear, 0, max);
+            }
+            
             GameManager.instance._Flag.read++;
             fadeManager.FadeOut("AdvScene");
         }
         else
         {
             // 全クリしたらセーブしてタイトルに戻る
-            GameManager.instance.Save();
+            if(isStory) GameManager.instance.Save();
             fadeManager.FadeOut("TitleScene");
         }
     }

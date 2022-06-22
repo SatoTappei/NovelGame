@@ -43,6 +43,7 @@ public class AdvBackground : MonoBehaviour
     // ‰¹–Â‚ç‚·
     public void PlaySound(string name)
     {
-        SoundManager.instance.Play(name);
+        if (name == "Ž~‚ß‚é") SoundManager.instance.StopBGM();
+        else SoundManager.instance.Play(name);
     }
 }

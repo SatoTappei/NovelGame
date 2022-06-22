@@ -6167,6 +6167,7 @@ MonoBehaviour:
   advEventManager: {fileID: 1234884464}
   advSceneUI: {fileID: 900086606}
   fadeManager: {fileID: 801413500}
+  _effParent: {fileID: 1172004379}
   _nameText: {fileID: 282965757}
   _lineText: {fileID: 789680993}
   _distance: 0.1

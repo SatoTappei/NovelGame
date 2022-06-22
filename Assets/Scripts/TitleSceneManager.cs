@@ -24,24 +24,33 @@ public class TitleSceneManager : MonoBehaviour
     [SerializeField] TitleItemButton _continueButton;
     // シーン選択のボタンのコンポーネント
     [SerializeField] TitleItemButton _sceneSelectButton;
-    // シーン選択の各シーンを選択するボタンの親
+    // シーン選択のオブジェクトの親
     [SerializeField] GameObject _sceneSelectItem;
+    // シーン選択のチャプター番号ボタンの親
+    [SerializeField] Transform _chapterNumButton;
     // "おまけ"ボタンのコンポーネント
     [SerializeField] TitleItemButton _omakeButton;
     // おまけの各オブジェクトの親
     [SerializeField] GameObject _omakeItem;
+    // 各コンテンツのボタンのアニメ
+    [SerializeField] Animator _beginingButtonAnim;
+    [SerializeField] Animator _continueButtonAnim;
+    [SerializeField] Animator _sceneSelectButtonAnim;
+    [SerializeField] Animator _omakeButtonAnim;
+    [SerializeField] Animator _exitButtonAnim;
     // チャプターボタンクリックでここに保存、再生しますか？ -> YESでGameManagerに渡す
     int _chapterNumBuffer;
 
     void Awake()
     {
         // セーブデータを読み込む
-        GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
+        
         //Debug.Log($"セーブデータをロード クリア{GameManager.instance._Flag.clear} リード{GameManager.instance._Flag.read}");
     }
 
     void Start()
     {
+        GameManager.instance.Load(); // ビルド後に上手く動作しないので一時的に消している
         fadeManager.FadeIn();
         Init();
     }
@@ -54,8 +63,10 @@ public class TitleSceneManager : MonoBehaviour
     // 初期化
     public void Init()
     {
+        bool isNoSaveData = !GameManager.instance._ExistSaveData;
+
         //セーブデータがない場合は"つづきから"とシーン選択をグレーアウト
-        if (!GameManager.instance._ExistSaveData)
+        if (isNoSaveData)
         {
             _continueButton.SetInteractable(false);
             _sceneSelectButton.SetInteractable(false);
@@ -64,7 +75,7 @@ public class TitleSceneManager : MonoBehaviour
         // TODO:おまけシーンを完成させる
         if (true)
         {
-            //_omakeButton.SetInteractable(false);
+            _omakeButton.SetInteractable(false);
         }
 
         _sceneSelectItem.SetActive(false);
@@ -73,6 +84,21 @@ public class TitleSceneManager : MonoBehaviour
         _confirmPopBack.SetActive(false);
 
         SoundManager.instance.Play("BGM_タイトル");
+
+        StartCoroutine(Enumerator());
+
+        IEnumerator Enumerator()
+        {
+            _beginingButtonAnim.SetTrigger("FadeIn");
+            yield return new WaitForSeconds(0.1f);
+            _continueButtonAnim.SetTrigger(isNoSaveData ? "Gray" : "FadeIn");
+            yield return new WaitForSeconds(0.1f);
+            _sceneSelectButtonAnim.SetTrigger(isNoSaveData ? "Gray" : "FadeIn");
+            yield return new WaitForSeconds(0.1f);
+            _omakeButtonAnim.SetTrigger("Gray"); // TODO:おまけシーンができたらここをFadeInにする
+            yield return new WaitForSeconds(0.1f);
+            _exitButtonAnim.SetTrigger("FadeIn");
+        }
     }
 
     // "はじめから"をクリックした際の処理
@@ -113,9 +139,9 @@ public class TitleSceneManager : MonoBehaviour
         ActiveItems(dispItem: _sceneSelectItem, hideItems: _omakeItem);
 
         // 進行状況に応じてボタンを表示
-        for (int i = 0; i < _sceneSelectItem.transform.childCount; i++)
+        for (int i = 0; i < _chapterNumButton.childCount; i++)
         {
-            GameObject child = _sceneSelectItem.transform.GetChild(i).gameObject;
+            GameObject child = _chapterNumButton.GetChild(i).gameObject;
             child.SetActive(i <= GameManager.instance._Flag.clear ? true : false);
         }
     }

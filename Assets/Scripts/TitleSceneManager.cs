@@ -72,12 +72,6 @@ public class TitleSceneManager : MonoBehaviour
             _sceneSelectButton.SetInteractable(false);
         }
 
-        // TODO:おまけシーンを完成させる
-        if (true)
-        {
-            _omakeButton.SetInteractable(false);
-        }
-
         _sceneSelectItem.SetActive(false);
         _omakeItem.SetActive(false);
         _popPanelBack.SetActive(false);
@@ -95,7 +89,7 @@ public class TitleSceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             _sceneSelectButtonAnim.SetTrigger(isNoSaveData ? "Gray" : "FadeIn");
             yield return new WaitForSeconds(0.1f);
-            _omakeButtonAnim.SetTrigger("Gray"); // TODO:おまけシーンができたらここをFadeInにする
+            _omakeButtonAnim.SetTrigger("FadeIn");
             yield return new WaitForSeconds(0.1f);
             _exitButtonAnim.SetTrigger("FadeIn");
         }

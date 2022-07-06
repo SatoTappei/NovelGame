@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickEff: {fileID: 5278296549775317376, guid: bc24ef1accba49044817bebaa85227ba, type: 3}
-  _maxChapterNum: 3
+  _maxChapterNum: 4

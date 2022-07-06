@@ -114,7 +114,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // Ä¶’†‚ÌBGM‚ðŽ~‚ß‚é
-    public void StopBGM() { _audioSources[_audioSources.Length - 1].Stop(); }
+    public void StopBGM() => _audioSources[_audioSources.Length - 1].Stop();
 
     // ‰¹‚ð–Â‚ç‚·AudioSource‚ðŽæ“¾
     AudioSource GetAudioSource()
